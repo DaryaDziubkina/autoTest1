@@ -14,4 +14,10 @@ public class ProviderBankInfoControllerTest extends TestCase {
         javax.ws.rs.core.Response response = client.target("localhost:8080/api/agents/providerInfoList").request(MediaType.APPLICATION_JSON).get();
         assertEquals("сообщение", response.getStatus() == Status.OK.getStatusCode());
     }
+
+    public void testGetBankBaseInfoList() throws Exception {
+        Client client = ClientBuilder.newClient().register(ProviderBankInfoController.class);
+        javax.ws.rs.core.Response response = client.target("localhost:8080/api/agents/bankBaseInfoList").request(MediaType.APPLICATION_JSON).get();
+        assertEquals("сообщение", response.getStatus() == Status.OK.getStatusCode());
+    }
 }
